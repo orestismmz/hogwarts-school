@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Hacked Hogwarts List</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <header>
+        <h1>Hogwarts school of witchcraft & wizardry</h1>
+      </header>
+
+      <main>
+        <div id="filters">
+          <select
+            class="filter"
+            name="houses"
+            id="house-filter"
+            data-action="filter"
+            data-filter="house"
+          >
+            <option value="all-houses">All houses</option>
+            <option value="gryffindor">Gryffindor</option>
+            <option value="hufflepuff">Hufflepuff</option>
+            <option value="ravenclaw">Ravenclaw</option>
+            <option value="slytherin">Slytherin</option>
+          </select>
+          <div>
+            <label for="prefects">Prefects</label>
+            <select class="filter" name="prefects" id="prefects-filter" data-action="filter">
+              <option value="-">-</option>
+              <option value="yes">yes</option>
+              <option value="no">no</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="inquisitorial-squad">Inquisitorial squad</label>
+            <select
+              class="filter"
+              name="inquisitorial-squad"
+              id="squad-filter"
+              data-action="filter"
+            >
+              <option value="-">-</option>
+              <option value="yes">yes</option>
+              <option value="no">no</option>
+            </select>
+          </div>
+
+          <div>
+            <label for="student-status">Student status</label>
+            <select
+              class="filter"
+              name="student-status"
+              id="student-status-filter"
+              data-action="filter"
+            >
+              <option value="-">-</option>
+              <option value="enrolled">enrolled</option>
+              <option value="expelled">expelled</option>
+            </select>
+          </div>
+
+          <div>
+            <input type="text" id="search" placeholder="...🔎" />
+            <button id="search-button">Search</button>
+          </div>
+        </div>
+
+        <div id="main-content">
+          <div id="list-info">
+            <p>Results: <span id="results">0</span></p>
+          </div>
+
+          <div id="modal" class="hidden">
+            <div id="modal-content">
+              <div id="modal-student-info">
+                <div id="modal-image-field">
+                  <img id="modal-image" src="img/abbott_h.png" alt="" />
+                </div>
+                <ul>
+                  <li id="first-name-li">
+                    <span>First name:</span><span id="first-name-field"></span>
+                  </li>
+                  <li id="middle-name-li">
+                    <span>Middle name:</span><span id="middle-name-field"></span>
+                  </li>
+                  <li id="nick-name-li">
+                    <span>Nick name:</span><span id="nick-name-field"></span>
+                  </li>
+                  <li id="last-name-li">
+                    <span>Last name:</span><span id="last-name-field"></span>
+                  </li>
+                  <li id="house-li"><span>House:</span><span id="house-field"></span></li>
+                  <li id="gender-li"><span>Gender:</span><span id="gender-field"></span></li>
+                  <li id="squad-member-li"><span>⭐ Inquisitorial squad Member</span></li>
+                  <li id="prefect-li"><span>🏅Prefect</span></li>
+                </ul>
+              </div>
+              <div id="modal-buttons">
+                <div data-name="assign-buttons" id="assign-buttons">
+                  <label data-name="expell"><input type="checkbox" id="expell" />Expell</label>
+                  <label data-name="set-prefect"
+                    ><input type="checkbox" id="set-prefect" />Assign as prefect</label
+                  >
+                  <label data-name="set-squad-member"
+                    ><input type="checkbox" id="set-squad-member" />Assign as inquisitorial squad
+                    member</label
+                  >
+                </div>
+                <div id="modal-save-button-field">
+                  <button id="modal-save-button">Save & exit</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="student-list"></div>
+        </div>
+      </main>
+
+      <footer></footer>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
